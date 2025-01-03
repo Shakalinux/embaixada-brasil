@@ -84,6 +84,7 @@ A aplicação segue a arquitetura **MVC (Model-View-Controller)** e utiliza as s
 ---
 
 ### Imagens do projeto
+Projeto em situação final, modelo de algumas rotas.
 
 <div style="width:100%; overflow:hidden; max-width:600px;">
   <div style="display: flex; transition: transform 0.5s ease;">
