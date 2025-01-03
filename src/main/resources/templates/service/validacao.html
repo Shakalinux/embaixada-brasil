@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Passaporte</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link th:href="@{/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Embaixada do Brasil</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contato">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/profile}">Perfil</a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" onclick="document.getElementById('logoutForm').submit()">Sair</a>
+        </li>
+        <form id="logoutForm" action="/logout" method="post" style="display: none;">
+          <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        </form>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="container my-5">
+  <h1 class="text-center">Passaporte do Usuário</h1>
+  <div class="d-flex justify-content-center mt-4">
+    <div class="card shadow-lg" style="max-width: 500px; width: 100%; border-radius: 15px;">
+      <div class="card-body p-4 text-center">
+        <h5 class="card-title mb-3">Usuário: <span th:text="${user.username}"></span></h5>
+        <p class="card-text"><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+        <p><strong>Status:</strong>
+          <span th:if="${passport.status.displayName == 'BLOQUEADO'}" class="text-danger">Bloqueado</span>
+          <span th:if="${passport.status.displayName == 'ATIVO'}" class="text-success">Ativo</span>
+        </p>
+        <form th:action="@{/passport/{id}(id=${passport.id})}" method="post" class="d-inline">
+          <div class="mb-2" th:if="${passport.status.displayName == 'BLOQUEADO'}">
+            <button type="submit" class="btn btn-primary">Alterar Status</button>
+          </div>
+        </form>
+        <a href="/" class="btn btn-secondary ms-2">Voltar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer mt-5 bg-dark text-center text-white py-3">
+  <p>&copy; 2024 Embaixada do Brasil | Todos os direitos reservados</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

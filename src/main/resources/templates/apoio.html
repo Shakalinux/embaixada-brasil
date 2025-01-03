@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoio ao Aplicativo Digital</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link th:href="@{/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container my-5">
+    <h2>Apoio ao Aplicativo Digital</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="/img/digital.jpg" class="imagem img-fluid" alt="Apoio ao Aplicativo Digital">
+        </div>
+        <div class="col-md-6">
+            <h5>Descrição do Serviço</h5>
+            <p>Ajudamos você a configurar e desbloquear sua conta no aplicativo digital da embaixada. Receba suporte completo para acessar os serviços online.</p>
+            <h5>Agende seu Atendimento</h5>
+            <form action="#" method="POST">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Seu nome</label>
+                    <input type="text" class="form-control" id="nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Seu e-mail</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="data" class="form-label">Data e horário preferido</label>
+                    <input type="datetime-local" class="form-control" id="data" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Agendar Atendimento</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

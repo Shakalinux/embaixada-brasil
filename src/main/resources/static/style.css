@@ -1,0 +1,38 @@
+body {
+    background-color: #e5f2d6;
+    color: #003366;
+}
+.navbar {
+    background-color: #003366;
+}
+.navbar-brand {
+    color: #fdd835;
+}
+.footer {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.btn-primary {
+    background-color: #fdd835;
+    border-color: #fdd835;
+}
+.btn-primary:hover {
+    background-color: #ffb300;
+    border-color: #ffb300;
+}
+.hero-section {
+    background-color: #006bb3;
+    color: white;
+    padding: 60px 0;
+}
+.hero-section h1 {
+    font-size: 3rem;
+}
+
+.imagem {
+    height: 450px;
+    object-fit: cover;
+    width: 100%;
+}
